@@ -9,7 +9,6 @@ from keras import layers,losses,metrics,callbacks,applications,optimizers
 #%% data loading
 data_path=os.path.join(os.getcwd(),'dataset','Concrete Crack Images for Classification')
 
-#%%
 BATCH_SIZE=10
 IMG_SIZE=(160,160)
 
@@ -75,7 +74,7 @@ preprocess_input=applications.mobilenet_v2.preprocess_input
 IMG_SHAPE=IMG_SIZE+(3,)
 base_model=applications.MobileNetV2(input_shape=IMG_SHAPE,include_top=False,weights='imagenet')
 
-# freeze the entire feature extractor to make sure we only train the classifier
+# freeze the entire feature extractor
 base_model.trainable=False
 base_model.summary()
 
@@ -115,7 +114,7 @@ es=callbacks.EarlyStopping(patience=1,verbose=1)
 epochs=10
 history_first=model.fit(train_dataset,validation_data=val_dataset,epochs=epochs,callbacks=[tb,es])
 
-#%% evaluate the model
+#%% model evaluation
 model.evaluate(test_dataset)
 
 #%% use the model to make prediction
@@ -137,7 +136,6 @@ plt.show()
 #%% use the model to predict a sample image
 filepath=os.path.join(os.getcwd(),'static','sample.jpg')
 img=cv2.imread(filename=filepath,flags=cv2.IMREAD_COLOR_RGB)
-# img=cv2.cvtColor(img,code=cv2.COLOR_BGR2RGB)
 img=cv2.resize(img,dsize=(160,160))
 plt.imshow(img)
 plt.show()

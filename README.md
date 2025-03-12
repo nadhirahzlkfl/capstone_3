@@ -4,18 +4,17 @@ This project exploits a deep learning model for the classification of concrete c
 
 ## Project Overview
 
-The goal of this project is to develop a deep learning model that can classify images of concrete cracks into categories ('Positive' or 'Negative'). The model is based on the MobileNetV2 architecture, which is pre-trained on ImageNet and used for feature extraction. The model is further fine-tuned to classify concrete cracks. The steps Involved:
+The goal of this project is to develop a deep learning model that can classify images of concrete cracks into categories ('Positive' or 'Negative'). The model is based on the MobileNetV2 architecture, which is pre-trained on ImageNet and used for feature extraction. The steps Involved:
 
 1. **Data Preprocessing**: Load and preprocess the dataset for training.
-2. **Data Augmentation**: Apply transformations such as random flips and rotations to increase the diversity of the dataset.
-3. **Transfer Learning**: Use a pre-trained MobileNetV2 model to extract features, then fine-tune it for our task.
+2. **Data Augmentation**: Apply transformations such as random flips. and rotations to increase the diversity of the dataset.
+3. **Transfer Learning**: Use a pre-trained MobileNetV2 model to extract features.
 4. **Model Training**: Train the model with early stopping and TensorBoard for visualization.
 5. **Model Evaluation**: Evaluate the model's performance on a test dataset.
-6. **Prediction**: Make predictions on new images.
+6. **Prediction**: Make predictions.
 
 ## Libraries
 
-Libraries used:
 - TensorFlow
 - Keras
 - NumPy
@@ -24,7 +23,7 @@ Libraries used:
 
 ## Dataset
 
-The data is loaded using Keras and the dataset is split into training, validation, and test sets. Data is taken from the data source:
+The data is loaded using Keras and the dataset is split into training, validation, and test sets. Data is taken from the data source below:
 
 [Data Source](https://data.mendeley.com/datasets/5y9wdsg2zt/2)
 
@@ -42,11 +41,9 @@ The model uses MobileNetV2, pre-trained on ImageNet, as the base feature extract
 
 ## Model Training
 
-The model is compiled using the Adam optimizer and the SparseCategoricalCrossentropy loss function. The usage of Callbacks TensorBoard aims for visualization purposes and EarlyStopping is used to prevent overfitting.
+The model is compiled using the Adam optimizer and the SparseCategoricalCrossentropy loss function. The usage of Callbacks TensorBoard aims for visualization and EarlyStopping is used to prevent overfitting.
 
 ![Compilation](static/model_compile.png)
-
-The training occurs in two stages. In the second stage, the base model is unfreezed and fine-tuned.
 
 ## Evaluation
 
