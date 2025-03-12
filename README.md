@@ -36,11 +36,9 @@ Data augmentation is applied to increase the variety of the dataset. This includ
 
 ## Model Architecture
 
-The model uses MobileNetV2, pre-trained on ImageNet, as the base feature extractor. Freeze technique is applied on the weights of the pre-trained layers to retain learned features and prevent overfitting.
+The model uses MobileNetV2, pre-trained on ImageNet, as the base feature extractor. Freeze technique is applied on the weights of the pre-trained layers to retain learned features and prevent overfitting. The model is then further customized with a Global Average Pooling layer and a dense output layer for classification.
 
 ![Model architecture|200](static/model.png)
-
-The model is then further customized with a Global Average Pooling layer and a dense output layer for classification.
 
 ## Model Training
 
