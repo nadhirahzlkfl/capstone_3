@@ -1,4 +1,3 @@
-```markdown
 # Concrete Crack Classification using Transfer Learning
 
 This project exploits a deep learning model for the classification of concrete crack images. MobileNetV2 architecture is used for transfer learning and various techniques such as data augmentation, early stopping, and TensorBoard are applied for training and evaluation.
