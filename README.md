@@ -38,7 +38,7 @@ Data augmentation is applied to increase the variety of the dataset. This includ
 
 The model uses MobileNetV2, pre-trained on ImageNet, as the base feature extractor. Freeze technique is applied on the weights of the pre-trained layers to retain learned features and prevent overfitting. The model is then further customized with a Global Average Pooling layer and a dense output layer for classification.
 
-<img src="static/model.png" width="300" height="200"/>
+<img src="static/model.png" width="300"/>
 
 ## Model Training
 
@@ -52,8 +52,6 @@ The training occurs in two stages. In the second stage, the base model is unfree
 
 After training, the model is evaluated using the test dataset to check its performance:
 
-![Evaluation](static/evaluation.png)
-
 ![Evaluation](static/tensorboard_epoch_accuracy.png)
 ![Evaluation](static/tensorboard_epoch_learning_rate.png)
 ![Evaluation](static/tensorboard_epoch_loss.png)
@@ -62,6 +60,6 @@ After training, the model is evaluated using the test dataset to check its perfo
 
 ## Prediction
 
-The trained model can be used to make predictions on both validation images and new images, as shown below:
+The trained model can be used to make predictions
 
 ![Prediction](static/prediction.png)
